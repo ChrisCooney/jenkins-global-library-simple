@@ -2,7 +2,19 @@
 
 Jenkins Global Shared libraries over a powerful way of centralising the functionality that will typically be duplicated across many `Jenkinsfile` pipelines across your application repositories.
 
-## They Have Some QUIRKS
+## General Structure
+
+* There are component files that represent collections of functionality that are similar, for example maven commands
+
+* There are pipeline files that represent a specific type of pipeline, for example the `JavaPipeline` file.
+
+* There is an overall Pipelines file. This is the interface that downstream users will interact with. This prevents any internal changes to the files themselves from breaking everyones builds.
+
+## Example
+
+There is a Jenkinsfile at the root of this repository that pulls in the libraries and shows how they might be used.
+
+## Shared Libraries have some QUIRKS!
 
 Yep, it's Groovy and it's Jenkins so you've got to bare a few things in mind.
 
